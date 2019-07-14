@@ -1,3 +1,6 @@
+Goal: Understanding how to use callback props. Learn how to handle adding new cards to a list and 
+removing a card from a list with by maniuplating the state's data.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
