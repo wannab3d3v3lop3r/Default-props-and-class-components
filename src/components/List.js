@@ -1,18 +1,18 @@
 import React from 'react';
 import './List.css';
-import {STORE} from '../store';
 import Card from './Card';
 
 export default function List(props) {
 
     const cards = props.cards.map((card, index) => {
-        if(STORE.allCards[card]) {
-            return <Card 
-                    key={index} 
-                    title={STORE.allCards[card].title} 
-                    content={STORE.allCards[card].content}
-                   />
-        }
+        return <Card 
+                    key={index}
+                    id={card.id}
+                    title={card.title} 
+                    content={card.content}
+                    handleDeleteCard={props.handleDeleteCard}
+                />
+        
     })
 
     return (
@@ -22,7 +22,7 @@ export default function List(props) {
             </header>
             <div className="List-cards">
                 {cards}
-                <button type="button" className="List-add-button">
+                <button type="button" className="List-add-button" onClick={e => props.handleAddCard(props.id)}>
                 + Add Random Card
                 </button>
             </div>
